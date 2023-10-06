@@ -1,0 +1,60 @@
+INFO:root:Using GPU: cuda
+WARNING:datasets.builder:Found cached dataset imdb (/scratch/general/vast/u1419542/huggingface_cache/imdb/plain_text/1.0.0/d613c88cf8fa3bab83b4ded3713f1f74830d1100e171db75bbddb80b3345c9c0)
+  0%|          | 0/3 [00:00<?, ?it/s] 67%|██████▋   | 2/3 [00:00<00:00, 11.23it/s]100%|██████████| 3/3 [00:00<00:00,  9.18it/s]
+WARNING:datasets.arrow_dataset:Loading cached shuffled indices for dataset at /scratch/general/vast/u1419542/huggingface_cache/imdb/plain_text/1.0.0/d613c88cf8fa3bab83b4ded3713f1f74830d1100e171db75bbddb80b3345c9c0/cache-41a2c3343abbd588.arrow
+WARNING:datasets.arrow_dataset:Loading cached shuffled indices for dataset at /scratch/general/vast/u1419542/huggingface_cache/imdb/plain_text/1.0.0/d613c88cf8fa3bab83b4ded3713f1f74830d1100e171db75bbddb80b3345c9c0/cache-7c714a480c6f1062.arrow
+WARNING:datasets.arrow_dataset:Loading cached shuffled indices for dataset at /scratch/general/vast/u1419542/huggingface_cache/imdb/plain_text/1.0.0/d613c88cf8fa3bab83b4ded3713f1f74830d1100e171db75bbddb80b3345c9c0/cache-ecbd9cfa717eaa4a.arrow
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+/uufs/chpc.utah.edu/common/home/u1419542/scratch/miniconda3/envs/inspectEnv/lib/python3.9/site-packages/transformers/convert_slow_tokenizer.py:473: UserWarning: The sentencepiece tokenizer that you are converting to a fast tokenizer uses the byte fallback option which is not implemented in the fast tokenizers. In practice this means that the fast version of the tokenizer can produce unknown tokens whereas the sentencepiece version would have converted these unknown tokens into a sequence of byte tokens matching the original piece of text.
+  warnings.warn(
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+Some weights of DebertaV2ForSequenceClassification were not initialized from the model checkpoint at microsoft/deberta-v3-large and are newly initialized: ['classifier.weight', 'pooler.dense.weight', 'pooler.dense.bias', 'classifier.bias']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+WARNING:datasets.arrow_dataset:Loading cached processed dataset at /scratch/general/vast/u1419542/huggingface_cache/imdb/plain_text/1.0.0/d613c88cf8fa3bab83b4ded3713f1f74830d1100e171db75bbddb80b3345c9c0/cache-54c0d2fc10016392.arrow
+WARNING:datasets.arrow_dataset:Loading cached processed dataset at /scratch/general/vast/u1419542/huggingface_cache/imdb/plain_text/1.0.0/d613c88cf8fa3bab83b4ded3713f1f74830d1100e171db75bbddb80b3345c9c0/cache-da023b69e32bf4cd.arrow
+WARNING:datasets.arrow_dataset:Loading cached processed dataset at /scratch/general/vast/u1419542/huggingface_cache/imdb/plain_text/1.0.0/d613c88cf8fa3bab83b4ded3713f1f74830d1100e171db75bbddb80b3345c9c0/cache-8002e1116accfe62.arrow
+You're using a DebertaV2TokenizerFast tokenizer. Please note that with a fast tokenizer, using the `__call__` method is faster than using a method to encode the text followed by a call to the `pad` method to get a padded encoding.
+Using TracInCPFast to perform computation for getting proponents. Processing training batches:   0%|          | 0/2 [00:00<?, ?it/s]We strongly recommend passing in an `attention_mask` since your input_ids may be padded. See https://huggingface.co/docs/transformers/troubleshooting#incorrect-output-when-padding-tokens-arent-masked.
+Using TracInCPFast to perform computation for getting proponents. Processing training batches:   0%|          | 0/2 [00:08<?, ?it/s]
+(tensor([[    1,   463,   370,  ...,     0,     0,     0],
+        [    1,  1876,  8188,  ...,     0,     0,     0],
+        [    1,   573,   495,  ...,     0,     0,     0],
+        [    1,   336, 43480,  ...,     0,     0,     0],
+        [    1,  1589,   312,  ..., 10004,   260,     2]], device='cuda:0'),)
+()
+Traceback (most recent call last):
+  File "/uufs/chpc.utah.edu/common/home/u1419542/CS6966/Assignments/Assignment4/model.py", line 403, in <module>
+    main()
+  File "/uufs/chpc.utah.edu/common/home/u1419542/CS6966/Assignments/Assignment4/model.py", line 375, in main
+    proponents_indices, proponents_influence_scores = tracin_cp_fast.influence(
+  File "/uufs/chpc.utah.edu/common/home/u1419542/scratch/miniconda3/envs/inspectEnv/lib/python3.9/site-packages/captum/log/__init__.py", line 42, in wrapper
+    return func(*args, **kwargs)
+  File "/uufs/chpc.utah.edu/common/home/u1419542/scratch/miniconda3/envs/inspectEnv/lib/python3.9/site-packages/captum/influence/_core/tracincp_fast_rand_proj.py", line 288, in influence
+    return _influence_route_to_helpers(
+  File "/uufs/chpc.utah.edu/common/home/u1419542/scratch/miniconda3/envs/inspectEnv/lib/python3.9/site-packages/captum/influence/_core/tracincp.py", line 471, in _influence_route_to_helpers
+    return influence_instance._get_k_most_influential(
+  File "/uufs/chpc.utah.edu/common/home/u1419542/scratch/miniconda3/envs/inspectEnv/lib/python3.9/site-packages/captum/influence/_core/tracincp_fast_rand_proj.py", line 471, in _get_k_most_influential
+    *_get_k_most_influential_helper(
+  File "/uufs/chpc.utah.edu/common/home/u1419542/scratch/miniconda3/envs/inspectEnv/lib/python3.9/site-packages/captum/influence/_utils/common.py", line 273, in _get_k_most_influential_helper
+    batch_tracin_scores = influence_batch_fn(inputs, batch)
+  File "/uufs/chpc.utah.edu/common/home/u1419542/scratch/miniconda3/envs/inspectEnv/lib/python3.9/site-packages/captum/influence/_core/tracincp_fast_rand_proj.py", line 343, in _influence_batch_tracincp_fast
+    batch_tracin_scores = get_checkpoint_contribution(self.checkpoints[0])
+  File "/uufs/chpc.utah.edu/common/home/u1419542/scratch/miniconda3/envs/inspectEnv/lib/python3.9/site-packages/captum/influence/_core/tracincp_fast_rand_proj.py", line 323, in get_checkpoint_contribution
+    src_jacobian, src_layer_input = _basic_computation_tracincp_fast(
+  File "/uufs/chpc.utah.edu/common/home/u1419542/scratch/miniconda3/envs/inspectEnv/lib/python3.9/site-packages/captum/influence/_core/tracincp_fast_rand_proj.py", line 769, in _basic_computation_tracincp_fast
+    out = influence_instance.model(*inputs)
+  File "/uufs/chpc.utah.edu/common/home/u1419542/CS6966/Assignments/Assignment4/model.py", line 228, in __call__
+    return self.model(*inputs)["logits"]
+  File "/uufs/chpc.utah.edu/common/home/u1419542/scratch/miniconda3/envs/inspectEnv/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/uufs/chpc.utah.edu/common/home/u1419542/scratch/miniconda3/envs/inspectEnv/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/uufs/chpc.utah.edu/common/home/u1419542/scratch/miniconda3/envs/inspectEnv/lib/python3.9/site-packages/transformers/models/deberta_v2/modeling_deberta_v2.py", line 1314, in forward
+    outputs = self.deberta(
+  File "/uufs/chpc.utah.edu/common/home/u1419542/scratch/miniconda3/envs/inspectEnv/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/uufs/chpc.utah.edu/common/home/u1419542/scratch/miniconda3/envs/inspectEnv/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/uufs/chpc.utah.edu/common/home/u1419542/scratch/miniconda3/envs/inspectEnv/lib/python3.9/site-packages/transformers/models/deberta_v2/modeling_deberta_v2.py", line 1067, in forward
+    raise ValueError("You have to specify either input_ids or inputs_embeds")
+ValueError: You have to specify either input_ids or inputs_embeds
